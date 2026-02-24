@@ -1,0 +1,7 @@
+{
+  "name": "SCRT Medical Reasoning System",
+  "description": "A Semantic Convolutional Reasoning Tree (SCRT) demonstration for clinical knowledge acquisition and diagnostic reasoning using MedGemma API.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRT - Semantic Convolutional Reasoning Tree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --medical-blue: #2563eb;
+            --medical-emerald: #10b981;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scrollbar-gutter: stable;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .medical-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden for staggered effect */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* SCRT Specific Animations */
+        @keyframes neuron-breath {
+            0%, 100% { box-shadow: 0 0 10px rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(99, 102, 241, 0.3); border-color: rgba(99, 102, 241, 0.6); }
+        }
+
+        @keyframes neuron-assemble {
+            0% { opacity: 0; transform: scale(0.9); border-style: dashed; }
+            50% { opacity: 1; transform: scale(1.02); border-style: solid; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes signal-flow {
+            0% { width: 0%; opacity: 0.5; }
+            100% { width: 100%; opacity: 0; }
+        }
+
+        .neuron-active {
+            animation: neuron-breath 3s infinite ease-in-out;
+        }
+
+        .neuron-new {
+            animation: neuron-assemble 1.2s ease-out forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-[#f8fafc] text-slate-900">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
